@@ -102,9 +102,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3740918081478929884}
-  - component: {fileID: 2971767928686945283}
   - component: {fileID: 2335174806467239639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 3. ThursdayIsland
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -125,18 +124,6 @@ Transform:
   m_Father: {fileID: 3740918081147361633}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2971767928686945283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3740918081478929887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca0685cbd25c6447a9cd5ae80f8f133, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &2335174806467239639
 CapsuleCollider:
   m_ObjectHideFlags: 0

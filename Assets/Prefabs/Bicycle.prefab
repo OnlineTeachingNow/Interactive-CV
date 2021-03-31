@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 646463810530095488}
   - component: {fileID: 646463810533519778}
   - component: {fileID: 646463810532520802}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stop f.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 646463810530095490}
   - component: {fileID: 646463810533519780}
   - component: {fileID: 646463810532520804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stop f
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 646463810530095492}
   - component: {fileID: 646463810533519782}
   - component: {fileID: 646463810532520806}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 646463810530095494}
   - component: {fileID: 646463810533519800}
   - component: {fileID: 646463810532520824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pedals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 646463810530095500}
   - component: {fileID: 646463810533519790}
   - component: {fileID: 646463810532520814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wheel f
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 646463810530095502}
   - component: {fileID: 646463810533519776}
   - component: {fileID: 646463810532520800}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wheel b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 646463810530095504}
   - component: {fileID: 646463810533519794}
   - component: {fileID: 646463810532520818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 646463810530095506}
   - component: {fileID: 646463810533519796}
   - component: {fileID: 646463810532520820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bicycle.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 646463810530095508}
   - component: {fileID: 646463810533519798}
   - component: {fileID: 646463810532520822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bicycle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 3035537867889182207}
   - component: {fileID: 3035537867889182206}
   - component: {fileID: -2098366110837729635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bicycle
   m_TagString: bicycle
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 646463810530095512}
   - component: {fileID: 646463810533519802}
   - component: {fileID: 646463810532520826}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ GameObject:
   - component: {fileID: 646463810530095514}
   - component: {fileID: 646463810533519804}
   - component: {fileID: 646463810532520828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1015,7 +1015,7 @@ GameObject:
   - component: {fileID: 646463810530095516}
   - component: {fileID: 646463810533519806}
   - component: {fileID: 646463810532520830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1097,7 +1097,7 @@ GameObject:
   - component: {fileID: 646463810530095518}
   - component: {fileID: 646463810533519792}
   - component: {fileID: 646463810532520816}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1179,7 @@ GameObject:
   - component: {fileID: 2526767397170187370}
   - component: {fileID: 6605722329989304732}
   - component: {fileID: 5140939199362834731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Topdowncamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
