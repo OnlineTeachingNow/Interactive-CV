@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Test test, 1, 2, 3
 public class TripSpawner : MonoBehaviour
 {
     [SerializeField] private List<TripConfig> _trips;
@@ -10,7 +11,7 @@ public class TripSpawner : MonoBehaviour
     private GameObject _transportPrefab;
     TransportPathing _newTransportation;
     bool _hasReachedLastTripWaypoint = false;
-    //bool _looping = false;
+    bool _looping = false;
 
     private void Start()
     {
@@ -22,8 +23,8 @@ public class TripSpawner : MonoBehaviour
     }
 
     /*
-     *The following method doesn't seem to do much when passed over, so I decided to pass it over. 
-     * 
+     *The following method doesn't seem to do much when passed over, so I decided to pass it over. It made no difference to the indexing of the last trip when I put this back into code.
+    
     private IEnumerator StartTripSpawning()
     {
         do
@@ -33,6 +34,7 @@ public class TripSpawner : MonoBehaviour
         while (_looping == true);
     }
     */
+    
 
     private IEnumerator SpawnTrips()
     {
@@ -49,7 +51,7 @@ public class TripSpawner : MonoBehaviour
     {
         _newTransportation = Instantiate(trip.GetTransportationPrefab(), trip.GetWayPoints()[0].transform.position, Quaternion.identity);
         _newTransportation.SetTripConfig(trip);
-      //  _newTransportation.GetComponent<TransportPathing>().SetTripConfig(trip); ; 
+       // _newTransportation.GetComponent<TransportPathing>().SetTripConfig(trip); //This made no difference to the trip indexer when put back into code.
        /*
         if (_transportPathing != null)
         {
