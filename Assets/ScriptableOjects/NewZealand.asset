@@ -16,4 +16,13 @@ MonoBehaviour:
   _transportPrefab: {fileID: -2098366110837729635, guid: 284c2359ddb3bd3448ab3fbeee48be94, type: 3}
   _numDays: 20
   _pathPrefab: {fileID: 3740918081147361632, guid: aa20e45c71c93e24d909a0f5eefc65ac, type: 3}
-  _moveSpeed: 3
+  _moveSpeed: 1
+  _tripPhotos:
+  - {fileID: 2800000, guid: dcaff3be3cad4a5439b26ac84619ed97, type: 3}
+  - {fileID: 2800000, guid: d9a9251d06228ea478b21e73e01af4bf, type: 3}
+  - {fileID: 2800000, guid: c2e5a1bda977b2d47895d88c574c0174, type: 3}
+  - {fileID: 2800000, guid: 42ea1a1bb5ef38142b8e1b91490cc961, type: 3}
+  - {fileID: 2800000, guid: f5b266cdd0f0ac249ac76b9f56dd780f, type: 3}
+  - {fileID: 2800000, guid: 64f0df5012817ae47827e27e0aedec5c, type: 3}
+  - {fileID: 2800000, guid: 9f00ea4bad034cb40b21e2706eb9503d, type: 3}
+  - {fileID: 2800000, guid: b29e30aa0b288ed4b833a959cb2899ac, type: 3}

@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Trips.asset", menuName = "Trips/Trip")]
 public class TripConfig : ScriptableObject
 {
-        [SerializeField] private string _tripName;
-        [SerializeField] private TransportPathing _transportPrefab;
-        [SerializeField] private int _numDays;
-        [SerializeField] private GameObject _pathPrefab;
-        [SerializeField] private float _moveSpeed;
+    [SerializeField] private string _tripName;
+    [SerializeField] private TransportPathing _transportPrefab;
+    [SerializeField] private int _numDays;
+    [SerializeField] private GameObject _pathPrefab;
+    private float _moveSpeed;
+    [SerializeField] private Texture2D[] _tripPhotos;
         //Probably going to need to put the photo references in here. 
         //probably going to put the instantiate code in here.
 
@@ -39,8 +41,18 @@ public class TripConfig : ScriptableObject
             return _numDays;
         }
 
+        public void SetTripSpeed(float speed)
+        {
+            _moveSpeed = speed;
+        }
+
         public string GetTripName()
         {
             return _tripName;
+        }
+
+        public Texture2D[] GetPhotos()
+        {
+        return _tripPhotos;
         }
     }

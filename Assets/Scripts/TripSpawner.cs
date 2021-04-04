@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TripSpawner : MonoBehaviour
 {
     [SerializeField] private List<TripConfig> _trips;
+    [SerializeField] Button _bicycleButton;
+    [SerializeField] PhotoDisplay _photoDisplay; 
     TransportPathing _transportPathing;
     Camera _mainCamera;
     private Transform _originTransform;
@@ -18,6 +21,7 @@ public class TripSpawner : MonoBehaviour
     }
     public void StartTrip()
     {
+        _bicycleButton.gameObject.SetActive(false);
         StartCoroutine(SpawnTrips());
     }
     private IEnumerator SpawnTrips()
@@ -25,8 +29,10 @@ public class TripSpawner : MonoBehaviour
         for (int tripIndex = 0; tripIndex < _trips.Count; tripIndex++)
         {
             _hasReachedLastTripWaypoint = false;
+            _photoDisplay.StartPhotoDisplay(_trips[tripIndex]);
             yield return (StartCoroutine(InstantiateTransportation(_trips[tripIndex])));
         }
+        _bicycleButton.gameObject.SetActive(true);
     }
     private IEnumerator InstantiateTransportation(TripConfig trip)
     {
