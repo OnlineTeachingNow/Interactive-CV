@@ -7,7 +7,8 @@ public class TripSpawner : MonoBehaviour
 {
     [SerializeField] private List<TripConfig> _trips;
     [SerializeField] Button _bicycleButton;
-    [SerializeField] PhotoDisplay _photoDisplay; 
+    [SerializeField] PhotoDisplay _photoDisplay;
+    [SerializeField] FauxGravityAttractor _earth;
     TransportPathing _transportPathing;
     Camera _mainCamera;
     private Transform _originTransform;
@@ -36,7 +37,8 @@ public class TripSpawner : MonoBehaviour
     }
     private IEnumerator InstantiateTransportation(TripConfig trip)
     {
-        _newTransportation = Instantiate(trip.GetTransportationPrefab(), trip.GetWayPoints()[0].transform.position, Quaternion.identity);
+        _newTransportation = Instantiate(trip.GetTransportationPrefab(), trip.GetWayPoints()[0].transform.position, 
+            Quaternion.LookRotation(trip.GetWayPoints()[1].transform.position - trip.GetWayPoints()[0].transform.position, _earth.ReturnBodyUp()));
         _mainCamera.gameObject.SetActive(false);
         _newTransportation.SetTripConfig(trip);
         yield return new WaitUntil(() => _hasReachedLastTripWaypoint == true); //Doing some crazy casting from a system.fun<bool> to a regular bool. Need to look into this more. 

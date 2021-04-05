@@ -58,7 +58,7 @@ public class TransportPathing : MonoBehaviour
 
     private void MoveTransportation(Vector3 _targetPosition, Vector3 _currentPosition)
     {
-        float _moveSpeed = 1f; //Trying to use the number of photos in order to determine the speed of the bicycle. I don't think it's working too well. Need to find a way to get the distance between each of the waypoints better. 
+        float _moveSpeed = 3f; //Trying to use the number of photos in order to determine the speed of the bicycle. I don't think it's working too well. Need to find a way to get the distance between each of the waypoints better. 
         var _movementThisFrame = _moveSpeed * Time.deltaTime;
         _tr.position = Vector3.MoveTowards(_currentPosition, _targetPosition, _movementThisFrame);
     }
@@ -84,6 +84,7 @@ public class TransportPathing : MonoBehaviour
 
     private void GetWayPointsSetOrigin()
     {
+        //Setting original position
         _wayPoints = _tripConfig.GetWayPoints();
         _original = _wayPoints[_wayPointsIndex].transform.position;
         _tr.position = _original;

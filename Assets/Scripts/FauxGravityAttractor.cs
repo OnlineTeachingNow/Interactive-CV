@@ -25,8 +25,9 @@ public class FauxGravityAttractor : MonoBehaviour
         //I potentially need to pass in the _bodyUp value, but perhaps I can get the bodyup value in my other script. 
     }
 
-    public Quaternion ReturnCurrentRotation()
+    public Vector3 ReturnBodyUp()
     {
-        return _currentObjectRotation;
+        return _bodyUp;
+        //return _currentObjectRotation;
     }
 }
