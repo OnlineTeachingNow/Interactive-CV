@@ -19,8 +19,8 @@ public class TransportPathing : MonoBehaviour
     Vector3 _currentPosition;
 
     [Header("Transportation Rotation")]
-    Quaternion _bodyRotation;
-    float _waypointRotationSmoothing = 0.3f;
+    //Quaternion _bodyRotation;
+    float _waypointRotationSmoothing = 0.1f;
 
     void Start()
     {
@@ -65,12 +65,12 @@ public class TransportPathing : MonoBehaviour
 
     private void RotateTransportation(Vector3 _targetPosition, Vector3 _currentPosition)
     {
-        _bodyRotation = _earth.ReturnCurrentRotation();
+        //_bodyRotation = _earth.ReturnCurrentRotation();
         Vector3 _distanceToNextWaypoint = _targetPosition - _currentPosition;
         float _distanceToPlane = Vector3.Dot(_tr.up, _distanceToNextWaypoint);
         Vector3 _pointOnPlane = _targetPosition - (_tr.up * _distanceToPlane);
         Quaternion q = Quaternion.LookRotation(_pointOnPlane - _tr.position, _tr.up);
-        _tr.localRotation = Quaternion.Slerp(_bodyRotation, q, _waypointRotationSmoothing);
+        _tr.localRotation = Quaternion.Slerp(_tr.localRotation, q, Time.deltaTime); //Recently added time.deltaTime, hoping it would cause a smoother transition. It's not looking like it.
     }
 
     private float GetMoveSpeed()
