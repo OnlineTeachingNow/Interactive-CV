@@ -4,59 +4,49 @@ using UnityEngine;
 
 public class TransportPathing : MonoBehaviour
 {
+    [Header ("References to Other Scripts") ]
     TripConfig _tripConfig;
     TripSpawner _tripSpawner;
-    List<Transform> _wayPoints;
     FauxGravityAttractor _earth;
-    private Vector3 _original;
+
+    [Header ("Waypoints")]
+    List<Transform> _wayPoints;
     private int _wayPointsIndex = 0;
-    Vector3 _direction;
-    Vector3 _thisLocation;
+
+    [Header("Transportation Position and Reference")]
+    private Transform _tr;
+    private Vector3 _original;
+    Vector3 _currentPosition;
+
+    [Header("Transportation Rotation")]
+    Quaternion _bodyRotation;
+    float _waypointRotationSmoothing = 0.3f;
 
     void Start()
     {
+        _tr = GetComponent<Transform>();
         _tripSpawner = FindObjectOfType<TripSpawner>();
-        _wayPoints = _tripConfig.GetWayPoints();
-        _original = _wayPoints[_wayPointsIndex].transform.position;
         _earth = FindObjectOfType<FauxGravityAttractor>();
-        this.transform.position = _original;
-        _direction = (_wayPoints[_wayPointsIndex].transform.position - this.transform.position).normalized;
-        _thisLocation = this.transform.position;
+        GetWayPointsSetOrigin();
+        _currentPosition = _tr.position;
     }
-
     void Update()
     {
-        MoveTransport();
+        FollowWaypoints();
     }
-
-    public void SetTripConfig(TripConfig tripConfigToSet)
-    {
-        this._tripConfig = tripConfigToSet;
-    }
-
-    private void MoveTransport()
+    private void FollowWaypoints()
     {
         if (_wayPointsIndex < _wayPoints.Count)
         {
-            float _moveSpeed = GetMoveSpeed(); //Trying to use the number of photos in order to determine the speed of the bicycle. I don't think it's working too well. Need to find a way to get the distance between each of the waypoints better. 
             var _targetPosition = _wayPoints[_wayPointsIndex].transform.position;
-            var _currentPosition = this.transform.position;
-            var _movementThisFrame = _moveSpeed * Time.deltaTime;
-            Vector3 _relativePos = _targetPosition - _currentPosition;
-             
+            _currentPosition = _tr.position;
 
-            this.transform.position = Vector3.MoveTowards(_currentPosition, _targetPosition, _movementThisFrame);
-            //this.transform.rotation = Quaternion.LookRotation(_direction, transform.up) * _earth.ReturnCurrentRotation();
-            //The program loses its mind and jumps around to all sorts of crazy places with this function.
-            //this.transform.rotation = Quaternion.LookRotation(_direction); //This is the closest I have to it working. However, the bicycle leans hard towards the earth and I want it to maintain the upright position.
-            //transform.LookAt(_targetPosition, _earth.ReturnBodyUp()); //earth.ReturnBodyUp returns the local y axis of the game object, i.e. Perpendicular to the surface of the earth. With this function, the bike doesn't move at all.
-            //this.transform.position = Vector3.RotateTowards(_currentPosition, _targetPosition, 0.01f, 0.0f); //The bike doesn't move at all because (I think), it's trying to rotate into the earth's surface and getting stopped by the collider.
-            
+            RotateTransportation(_targetPosition, _currentPosition);
+            MoveTransportation(_targetPosition, _currentPosition);
+
             if (Vector3.Distance(_currentPosition, _targetPosition) < 0.08)
             {
-                _thisLocation = _wayPoints[_wayPointsIndex].position;
                 _wayPointsIndex++;
-                //_direction = (_wayPoints[_wayPointsIndex].transform.position - this.transform.position).normalized;
             }
         }
         else
@@ -66,12 +56,41 @@ public class TransportPathing : MonoBehaviour
         }
     }
 
+    private void MoveTransportation(Vector3 _targetPosition, Vector3 _currentPosition)
+    {
+        float _moveSpeed = 1f; //Trying to use the number of photos in order to determine the speed of the bicycle. I don't think it's working too well. Need to find a way to get the distance between each of the waypoints better. 
+        var _movementThisFrame = _moveSpeed * Time.deltaTime;
+        _tr.position = Vector3.MoveTowards(_currentPosition, _targetPosition, _movementThisFrame);
+    }
+
+    private void RotateTransportation(Vector3 _targetPosition, Vector3 _currentPosition)
+    {
+        _bodyRotation = _earth.ReturnCurrentRotation();
+        Vector3 _distanceToNextWaypoint = _targetPosition - _currentPosition;
+        float _distanceToPlane = Vector3.Dot(_tr.up, _distanceToNextWaypoint);
+        Vector3 _pointOnPlane = _targetPosition - (_tr.up * _distanceToPlane);
+        Quaternion q = Quaternion.LookRotation(_pointOnPlane - _tr.position, _tr.up);
+        _tr.localRotation = Quaternion.Slerp(_bodyRotation, q, _waypointRotationSmoothing);
+    }
+
     private float GetMoveSpeed()
     {
         float _totalTripTime = FindObjectOfType<PhotoDisplay>().ReturnTotalTripTime();
         var _secondsPerWayPoint = _totalTripTime / (_wayPoints.Count - 1);
-        float _distanceBetweenWayPoints = Vector3.Distance(_thisLocation, _wayPoints[_wayPointsIndex].position);
+        float _distanceBetweenWayPoints = Vector3.Distance(_currentPosition, _wayPoints[_wayPointsIndex].position);
         float _moveSpeed = _secondsPerWayPoint / _distanceBetweenWayPoints;
         return _moveSpeed;
+    }
+
+    private void GetWayPointsSetOrigin()
+    {
+        _wayPoints = _tripConfig.GetWayPoints();
+        _original = _wayPoints[_wayPointsIndex].transform.position;
+        _tr.position = _original;
+    }
+
+    public void SetTripConfig(TripConfig tripConfigToSet)
+    {
+        this._tripConfig = tripConfigToSet;
     }
 }
