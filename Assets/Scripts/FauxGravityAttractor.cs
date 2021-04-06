@@ -28,6 +28,11 @@ public class FauxGravityAttractor : MonoBehaviour
     public Vector3 ReturnBodyUp()
     {
         return _bodyUp;
-        //return _currentObjectRotation;
+
+    }
+
+    public Quaternion ReturnCurrentObjectRotation()
+    {
+        return _currentObjectRotation;
     }
 }
