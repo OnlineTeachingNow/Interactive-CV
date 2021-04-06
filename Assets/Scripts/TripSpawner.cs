@@ -47,8 +47,8 @@ public class TripSpawner : MonoBehaviour
         Vector3 _directionToFace = trip.GetWayPoints()[1].transform.position - trip.GetWayPoints()[0].transform.position;
         //Instantiate Object
         _newTransportation = Instantiate(trip.GetTransportationPrefab(), trip.GetWayPoints()[0].transform.position, Quaternion.LookRotation(_directionToFace, _earth.ReturnBodyUp()));
-        Debug.DrawRay(_newTransportation.transform.position, _directionToFace, Color.yellow);
-        Time.timeScale = 0;
+        //Debug.DrawRay(_newTransportation.transform.position, _directionToFace, Color.yellow);
+        //Time.timeScale = 0;
         //Change Object Rotation The following script made everything much worse. 
         /* Vector3 _distanceToNextWaypoint = trip.GetWayPoints()[1].transform.position - _newTransportation.transform.position;
         float _distanceToPlane = Vector3.Dot(_newTransportation.transform.up, _distanceToNextWaypoint);

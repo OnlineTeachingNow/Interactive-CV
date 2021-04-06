@@ -71,7 +71,7 @@ public class TransportPathing : MonoBehaviour
         Vector3 _pointOnPlane = _targetPosition - (_tr.up * _distanceToPlane);
         Quaternion q = Quaternion.LookRotation(_pointOnPlane - _tr.position, _tr.up);
         _tr.localRotation = Quaternion.Slerp(_tr.localRotation, q, Time.deltaTime); //Recently added time.deltaTime, hoping it would cause a smoother transition. It's not looking like it.
-        Debug.DrawRay(_tr.position, _distanceToNextWaypoint, Color.red);
+        //Debug.DrawRay(_tr.position, _distanceToNextWaypoint, Color.red);
     }
 
     private float GetMoveSpeed()
