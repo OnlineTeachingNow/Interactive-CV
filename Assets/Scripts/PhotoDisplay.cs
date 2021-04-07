@@ -7,24 +7,23 @@ public class PhotoDisplay : MonoBehaviour
 {
     RawImage _thisRawImage;
     private Texture2D[] _tripPhotos;
-    float _thisWidth;
-    float _thisHeight;
-    [SerializeField] float _timeBetweenPhotos = 1.0f;
+    [SerializeField] float _timeBetweenPhotos;
     [SerializeField] int _photoSizeScale = 1;
-    float _totalTimeForAllPhotos;
+
 
     private void Start()
     {
         this.gameObject.SetActive(false);
     }
 
-    public void StartPhotoDisplay(TripConfig thisTrip)
+    public float StartPhotoDisplay(TripConfig thisTrip)
     {
         this.gameObject.SetActive(true);
-        _thisRawImage = GetComponent<RawImage>();
+        _thisRawImage = GetComponent<RawImage>(); //Gets the Raw Image UI Component
         _tripPhotos = thisTrip.GetPhotos();
-        SetTripSpeed(thisTrip);
         StartCoroutine(DisplayPhotos());
+        Debug.Log("Time between photos: " + _timeBetweenPhotos);
+        return ReturnTotalTripTime(thisTrip);
     }
 
     private IEnumerator DisplayPhotos()
@@ -33,25 +32,14 @@ public class PhotoDisplay : MonoBehaviour
         {
             var _photoHeight = photo.height;
             var _photoWidth = photo.width;
-            Debug.Log("Width: " + _photoWidth + " and height: " + _photoHeight);
             GetComponent<RectTransform>().sizeDelta = new Vector2(_photoWidth, _photoHeight)/_photoSizeScale;
-            //Debug.Log("raw image size delta: " + _thisRawImage.rectTransform.sizeDelta);
             _thisRawImage.texture = photo;
             yield return new WaitForSeconds(_timeBetweenPhotos);
         }
     }
-    private void SetTripSpeed(TripConfig trip)
+    private float ReturnTotalTripTime(TripConfig trip)
     {
         var _numPhotos = _tripPhotos.Length;
-        _totalTimeForAllPhotos = _numPhotos * _timeBetweenPhotos;
-        //number of waypoints
-        //dividing the photo count by number of waypoints 
-        //
+        return (_numPhotos * _timeBetweenPhotos);
     }
-
-    public float ReturnTotalTripTime()
-    {
-        return _totalTimeForAllPhotos;
-    }
-
 }

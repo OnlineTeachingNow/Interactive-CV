@@ -17,30 +17,10 @@ MonoBehaviour:
   _numDays: 90
   _pathPrefab: {fileID: 3740918081147361632, guid: 17233831aa05e454193018fa846104ce, type: 3}
   _tripPhotos:
-  - {fileID: 2800000, guid: d31266d1bd373974393f6b5745bb1070, type: 3}
-  - {fileID: 2800000, guid: 249165b8b9238d54891377272ac68480, type: 3}
-  - {fileID: 2800000, guid: c728b4b5867a3244fb9788ccf8b1a3b8, type: 3}
-  - {fileID: 2800000, guid: a333dda4960654a42b61abe94bbc941c, type: 3}
   - {fileID: 2800000, guid: 0b33272a9bac4444792e41a2e9a776fd, type: 3}
-  - {fileID: 2800000, guid: 9cc283a81306186429fdefe2e08e79bb, type: 3}
-  - {fileID: 2800000, guid: 0118d195e5eec194099da2a920cc3fe6, type: 3}
-  - {fileID: 2800000, guid: 023f29b5cce037a4880be9c257b4f0fa, type: 3}
   - {fileID: 2800000, guid: 78407abd0780cd64e971b0126b28b91f, type: 3}
   - {fileID: 2800000, guid: e95a95668be49e449b46e837be483e9c, type: 3}
-  - {fileID: 2800000, guid: fec9d33215e019f41b3cd2204228aa82, type: 3}
-  - {fileID: 2800000, guid: ce63ef94071722047afdb8a63fa60a5a, type: 3}
-  - {fileID: 2800000, guid: c7e114ed12734034fa5a857ec24e6d33, type: 3}
   - {fileID: 2800000, guid: 4b6d750515b1f3745a2bcab56946cfd5, type: 3}
-  - {fileID: 2800000, guid: 1514c6dca07f7d94ca39d136bf7e1778, type: 3}
-  - {fileID: 2800000, guid: 36fdce2bee4f0bb44917399bdea6e3fe, type: 3}
-  - {fileID: 2800000, guid: 6712eef1864d148419a6e255b5e0a8c1, type: 3}
-  - {fileID: 2800000, guid: 32b673b53ae5bee41a48e9aeca768811, type: 3}
   - {fileID: 2800000, guid: dac672851c298ad4eaabb6e6933094d5, type: 3}
-  - {fileID: 2800000, guid: 046616ad0c7a5ef4ba4c3dd9f65f8411, type: 3}
-  - {fileID: 2800000, guid: 94386e7e24b1c254eb0e274b678c4166, type: 3}
-  - {fileID: 2800000, guid: cd12d43d7069afd499904c5c41330f1a, type: 3}
-  - {fileID: 2800000, guid: 57d34032df790244db95857753361adc, type: 3}
   - {fileID: 2800000, guid: 8d82281dabebc1f4883d6a32796aca7c, type: 3}
-  - {fileID: 2800000, guid: 4180f41e85d3c704ab53cedb03a37717, type: 3}
   - {fileID: 2800000, guid: 8ea9d6b99a336be4da85e171f2782dc9, type: 3}
-  - {fileID: 2800000, guid: b3ef0017619807e4692d3278caff2bb0, type: 3}

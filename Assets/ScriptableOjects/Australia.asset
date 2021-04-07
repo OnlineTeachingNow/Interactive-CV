@@ -16,29 +16,15 @@ MonoBehaviour:
   _transportPrefab: {fileID: -2098366110837729635, guid: 284c2359ddb3bd3448ab3fbeee48be94, type: 3}
   _numDays: 60
   _pathPrefab: {fileID: 3740918081147361632, guid: 819e44ada99e958498020ff66b1d3779, type: 3}
-  _moveSpeed: 1
   _tripPhotos:
   - {fileID: 2800000, guid: 118a461d8494df345aa09943cc40058c, type: 3}
-  - {fileID: 2800000, guid: 7e8e0106022b658409255099e6c05d28, type: 3}
   - {fileID: 2800000, guid: b33e2d862fca41342892623a2c3cc672, type: 3}
-  - {fileID: 2800000, guid: 9385e0b6952b53f4ba991af37036fea1, type: 3}
-  - {fileID: 2800000, guid: 96ef27bcf94b2be4abd0fd71295cac5c, type: 3}
-  - {fileID: 2800000, guid: 90f5ec8be90535045ba8550bd6fb3343, type: 3}
   - {fileID: 2800000, guid: 414a3196cad80e647a0708f738219153, type: 3}
-  - {fileID: 2800000, guid: f1531317a28bfea4db092cfcb98e8481, type: 3}
-  - {fileID: 2800000, guid: 7bf8d4e59af2c0545b7d8c7acf1532cc, type: 3}
   - {fileID: 2800000, guid: 3982599966e26e343b95f923db58237a, type: 3}
-  - {fileID: 2800000, guid: 708c730c8fa8abc4ebce5580f431bf2d, type: 3}
-  - {fileID: 2800000, guid: 27dfb0ff073fd0e4b8154d3bf9cd4c2a, type: 3}
   - {fileID: 2800000, guid: e1467980913857b43a6e22566678dc61, type: 3}
   - {fileID: 2800000, guid: 153af70237ce72f49be362914649f23c, type: 3}
-  - {fileID: 2800000, guid: 181bcee0ed6a40140981af4c1305f375, type: 3}
   - {fileID: 2800000, guid: e758c2c202f93ad40b3d3fe3836388a6, type: 3}
-  - {fileID: 2800000, guid: da3918b3b0b8c1a4b8bdcd62925440bb, type: 3}
   - {fileID: 2800000, guid: 963e55bb24a0cb748874bacf1f082511, type: 3}
-  - {fileID: 2800000, guid: cf4a86d27f0cacc449117c0d8ed21216, type: 3}
-  - {fileID: 2800000, guid: 8bbc91906b656a149b886d67ba976495, type: 3}
-  - {fileID: 2800000, guid: a1afe05d8342f0b4aad2764a5ec682bd, type: 3}
   - {fileID: 2800000, guid: cb304d9a1a83bd5419c40f7211f0a5d5, type: 3}
   - {fileID: 2800000, guid: 61c43d0e1d101234dbf38d46ae2bbdcd, type: 3}
   - {fileID: 2800000, guid: a937fa392f56765409a75471ef9591c6, type: 3}
